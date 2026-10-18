@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Company Name | Professional Cleaning Services</title>
+<meta name="description" content="Your Company Name provides reliable cleaning services for offices, businesses, and homes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F9F8; --surface:#FFFFFF; --ink:#0E2B2F; --muted:#51666A; --line:#DCE6E4;
+  --brand:#0F766E; --brand-ink:#FFFFFF; --accent:#14B8A6; --soft:#E3F3F0; --deep:#0E2B2F; --deep-ink:#EAF6F4;
+  --r:18px; --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0A1A1D;--surface:#102529;--ink:#EAF6F4;--muted:#9DB5B8;--line:#1D3A3F;--brand:#2DD4BF;--brand-ink:#06201F;--accent:#2DD4BF;--soft:#12332F;--deep:#071315;--deep-ink:#EAF6F4}
+}
+:root[data-theme="dark"]{--bg:#0A1A1D;--surface:#102529;--ink:#EAF6F4;--muted:#9DB5B8;--line:#1D3A3F;--brand:#2DD4BF;--brand-ink:#06201F;--accent:#2DD4BF;--soft:#12332F;--deep:#071315;--deep-ink:#EAF6F4}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.65;font-size:1.0625rem;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1160px,100% - 2.5rem);margin-inline:auto}
+section{padding:clamp(4rem,9vw,7rem) 0}
+h1,h2,h3{line-height:1.12;letter-spacing:-.02em}
+h1{font-size:clamp(2.6rem,6.4vw,4.8rem);font-weight:800}
+h2{font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:800;margin-bottom:1rem}
+h3{font-size:1.15rem;font-weight:700;margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:56ch;font-size:1.15rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.6rem;border-radius:999px;font-weight:700;font-size:1rem;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform .15s,background .2s}
+.btn-primary{background:var(--brand);color:var(--brand-ink)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--brand)}
+
+/* Nav */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.15rem;letter-spacing:-.02em}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--brand);display:grid;place-items:center}
+.logo-mark svg{width:20px;height:20px;fill:var(--brand-ink)}
+.menu{display:flex;align-items:center;gap:2rem;font-weight:600;font-size:.97rem}
+.menu a:not(.btn):hover{color:var(--brand)}
+.menu .btn{padding:.6rem 1.2rem}
+.burger{display:none;background:none;border:0;color:var(--ink);cursor:pointer;padding:.5rem}
+@media(max-width:820px){
+  .burger{display:block}
+  .menu{position:absolute;inset:72px 0 auto 0;background:var(--bg);flex-direction:column;align-items:flex-start;padding:1.5rem 1.25rem 2rem;gap:1.25rem;border-bottom:1px solid var(--line);display:none}
+  .menu.open{display:flex}
+}
+
+/* Hero */
+.hero{padding-top:clamp(3rem,7vw,6rem)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hero h1{margin-bottom:1.4rem}
+.hero .lead{margin-bottom:2rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem}
+.hero-art{position:relative;aspect-ratio:1/1.05;border-radius:32px;background:linear-gradient(150deg,var(--deep),#134E4A);overflow:hidden}
+.hero-art svg{position:absolute;inset:0;width:100%;height:100%}
+.badge{position:absolute;left:1.2rem;bottom:1.2rem;right:1.2rem;background:color-mix(in srgb,var(--surface) 94%,transparent);color:var(--ink);border-radius:16px;padding:1rem 1.2rem;display:flex;gap:.9rem;align-items:center;font-size:.95rem}
+.badge b{display:block;font-size:1rem}
+.badge span{color:var(--muted)}
+.badge .tick{flex:none;width:40px;height:40px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--brand)}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-art{aspect-ratio:4/3}}
+@media(prefers-reduced-motion:no-preference){
+  .hero-grid>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .hero-grid>*:last-child{animation-delay:.15s}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}}
+}
+
+/* Stats strip */
+.stats{padding:0}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.stat{padding:1.6rem 1.5rem;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat strong{display:block;font-size:1.9rem;font-weight:800;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:.95rem}
+@media(max-width:820px){.stats-row{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* Split sections */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.split.flip>:first-child{order:2}
+.checks{display:grid;gap:.7rem;margin:1.6rem 0 2rem}
+.checks li{display:flex;gap:.7rem;align-items:flex-start}
+.checks svg{flex:none;width:22px;height:22px;margin-top:3px;color:var(--brand)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:2rem}
+.panel.tint{background:var(--soft);border-color:transparent}
+.points{display:grid;gap:1.4rem}
+.point{display:flex;gap:1rem}
+.ico{flex:none;width:46px;height:46px;border-radius:14px;background:var(--soft);color:var(--brand);display:grid;place-items:center}
+.panel.tint .ico{background:var(--surface)}
+.ico svg{width:24px;height:24px}
+.point p{color:var(--muted);font-size:.98rem}
+@media(max-width:820px){.split{grid-template-columns:1fr}.split.flip>:first-child{order:0}}
+
+/* Services */
+.services{background:var(--deep);color:var(--deep-ink)}
+.services .lead{color:color-mix(in srgb,var(--deep-ink) 70%,transparent)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.card{padding:2rem;border-radius:var(--r);background:color-mix(in srgb,var(--deep-ink) 6%,transparent);border:1px solid color-mix(in srgb,var(--deep-ink) 14%,transparent)}
+.card .ico{background:var(--accent);color:#06201F;margin-bottom:1.2rem}
+.card p{color:color-mix(in srgb,var(--deep-ink) 70%,transparent);font-size:.98rem}
+@media(max-width:820px){.cards{grid-template-columns:1fr}}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem;counter-reset:s}
+.step{position:relative;padding-top:1.6rem;border-top:2px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-17px;left:0;width:32px;height:32px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font-weight:800;display:grid;place-items:center;font-size:.9rem}
+.step p{color:var(--muted);font-size:.96rem}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* Testimonials */
+.quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3rem}
+.quote{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:2rem}
+.quote p{font-size:1.1rem;margin-bottom:1.5rem}
+.who{display:flex;align-items:center;gap:.8rem}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--soft);color:var(--brand);display:grid;place-items:center;font-weight:800}
+.who span{display:block;color:var(--muted);font-size:.9rem}
+@media(max-width:820px){.quotes{grid-template-columns:1fr}}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem)}
+.info{display:grid;gap:1.1rem;margin-top:2rem}
+.info a,.info div{display:flex;gap:.9rem;align-items:center;font-weight:600}
+form{display:grid;gap:1rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{font-weight:600;font-size:.92rem;display:grid;gap:.4rem}
+input,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:.85rem 1rem;width:100%}
+input:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 25%,transparent)}
+textarea{min-height:140px;resize:vertical}
+.form-msg{display:none;padding:1rem 1.2rem;border-radius:12px;background:var(--soft);color:var(--ink);font-weight:600}
+.form-msg.show{display:block}
+@media(max-width:820px){.contact-grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.92rem}
+.foot{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+.foot .logo{color:var(--ink)}
+.foot nav{display:flex;gap:1.4rem}
+.foot a:hover{color:var(--brand)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Your Company Name home">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2zm7 11l.9 2.6L22.5 16.5l-2.6.9L19 20l-.9-2.6-2.6-.9 2.6-.9L19 13zM6 15l.7 2 2 .7-2 .7L6 20.4l-.7-2-2-.7 2-.7L6 15z"/></svg></span>
+      Your Company Name
+    </a>
+    <button class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact" class="btn btn-primary">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>We clean. You relax.</h1>
+      <p class="lead">Your Company Name keeps offices, businesses, and homes spotless with trained teams, clear pricing, and schedules we actually keep.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Book a free quote</a>
+        <a href="#services" class="btn btn-ghost">See our services</a>
+      </div>
+    </div>
+    <div class="hero-art" role="img" aria-label="Abstract illustration of sparkling clean surfaces">
+      <svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <circle cx="300" cy="110" r="150" fill="#14B8A6" opacity=".22"/>
+        <circle cx="90" cy="300" r="170" fill="#2DD4BF" opacity=".14"/>
+        <rect x="70" y="90" width="190" height="230" rx="22" fill="#fff" opacity=".1"/>
+        <rect x="100" y="125" width="130" height="14" rx="7" fill="#fff" opacity=".35"/>
+        <rect x="100" y="155" width="90" height="14" rx="7" fill="#fff" opacity=".2"/>
+        <rect x="100" y="185" width="110" height="14" rx="7" fill="#fff" opacity=".2"/>
+        <g fill="#5EEAD4"><path d="M290 70l7 21 21 7-21 7-7 21-7-21-21-7 21-7z"/><path d="M335 200l4 12 12 4-12 4-4 12-4-12-12-4 12-4z" opacity=".8"/><path d="M60 70l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" opacity=".7"/></g>
+      </svg>
+      <div class="badge">
+        <span class="tick"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>
+        <div><b>Satisfaction guaranteed</b><span>Not happy? We re-clean it for free.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats" aria-label="Company highlights">
+  <div class="wrap">
+    <div class="stats-row">
+      <div class="stat"><strong>10+</strong><span>Years of experience</span></div>
+      <div class="stat"><strong>500+</strong><span>Happy clients</span></div>
+      <div class="stat"><strong>50</strong><span>Trained cleaners</span></div>
+      <div class="stat"><strong>24/7</strong><span>Support line</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap split">
+    <div>
+      <h2>Cleaning for companies</h2>
+      <p class="lead">From a single office to a full facility, we build a plan around your space and your hours.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Office and practice cleaning</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Industrial cleaning</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Restaurant and bar cleaning</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Event cleaning, before and after</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Request a business quote</a>
+    </div>
+    <div class="panel points">
+      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h9"/></svg></span><div><h3>Transparent process</h3><p>Checklists and reports for every visit, so you always know what was done.</p></div></div>
+      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5z"/></svg></span><div><h3>Repairs organized</h3><p>We spot issues and coordinate trusted technicians on your behalf.</p></div></div>
+      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></span><div><h3>Reliable partner</h3><p>Insured, vetted staff and one contact person for your account.</p></div></div>
+      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span><div><h3>Call service</h3><p>Urgent mess? Call us and we send a team fast.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap split flip">
+    <div>
+      <h2>Care for private properties</h2>
+      <p class="lead">Your home deserves the same attention you give it. One trusted team, the same faces every visit.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Room and deep cleaning</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Move-out cleaning with handover guarantee</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Glass and window cleaning</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Laundry and ironing service</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Request a home quote</a>
+    </div>
+    <div class="panel tint points">
+      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></span><div><h3>No moonlighting</h3><p>Our cleaners work only for us, so quality and trust stay consistent.</p></div></div>
+      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><h3>Personal</h3><p>A dedicated cleaner who learns how you like things done.</p></div></div>
+      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>On time</h3><p>We arrive in the agreed window and finish what we promised.</p></div></div>
+      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5C16 5 14.2 4.5 12 4.5c-2.8 0-4.5 1.2-4.5 3.2 0 4.8 9 2.3 9 7 0 2-1.8 3.3-4.5 3.3-2.3 0-4.3-.8-5.2-2.5"/></svg></span><div><h3>Fair price</h3><p>Upfront quotes with no hidden fees.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <h2>Everything your space needs</h2>
+    <p class="lead">Add on whatever you need. Each service can be booked once or on a recurring schedule.</p>
+    <div class="cards">
+      <article class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></span><h3>Property maintenance</h3><p>Regular upkeep of building interiors, common areas, and entrances.</p></article>
+      <article class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5z"/></svg></span><h3>Repair coordination</h3><p>One call to schedule and supervise plumbers, electricians, and painters.</p></article>
+      <article class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V10M12 10c0-4 3-7 8-7 0 5-3 8-8 7zM12 14c0-3-2-5-6-5 0 4 2 6 6 5z"/></svg></span><h3>Garden care</h3><p>Lawn, hedges, and outdoor areas kept tidy through every season.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="lead">From first call to first clean, usually within a few days.</p>
+    <ol class="steps" style="list-style:none">
+      <li class="step"><h3>Tell us what you need</h3><p>Send a message or call. We ask a few questions about size and schedule.</p></li>
+      <li class="step"><h3>Get a clear quote</h3><p>A fixed price in writing, usually within one business day.</p></li>
+      <li class="step"><h3>We clean</h3><p>A vetted team arrives on time with all equipment and supplies.</p></li>
+      <li class="step"><h3>You review</h3><p>Check the result. Anything missed, we fix at no cost.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <h2>What clients say</h2>
+    <div class="quotes">
+      <figure class="quote"><p>“Replace this with a real testimonial from a client. Short, specific quotes about results work best.”</p><figcaption class="who"><span class="avatar">A</span><div><b>Client Name</b><span>Role, Company</span></div></figcaption></figure>
+      <figure class="quote"><p>“Replace this with another testimonial. Mention what changed after working with Your Company Name.”</p><figcaption class="who"><span class="avatar">B</span><div><b>Client Name</b><span>Role, Company</span></div></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--soft)">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Let's talk</h2>
+      <p class="lead">Tell us about your space and we'll reply with a quote within one business day.</p>
+      <div class="info">
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Mon – Fri, 08:00 – 17:00</div>
+        <a href="tel:+000000000000"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>+00 000 0000 0000</a>
+        <a href="mailto:hello@yourcompany.com"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>hello@yourcompany.com</a>
+      </div>
+    </div>
+    <div class="panel">
+      <form id="contact-form" novalidate>
+        <div class="row">
+          <label>First name<input type="text" name="first" autocomplete="given-name" required></label>
+          <label>Last name<input type="text" name="last" autocomplete="family-name"></label>
+        </div>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+        <label>Message<textarea name="message" placeholder="What would you like cleaned, and how often?"></textarea></label>
+        <button class="btn btn-primary" type="submit">Send message</button>
+        <p class="form-msg" role="status" id="form-msg"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#top" class="logo">Your Company Name</a>
+    <nav aria-label="Footer"><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+    <span>© <span id="yr">2026</span> Your Company Name. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.burger'),m=document.getElementById('menu');
+  b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var f=document.getElementById('contact-form'),msg=document.getElementById('form-msg');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=f.first.value.trim()&&/^\S+@\S+\.\S+$/.test(f.email.value);
+    msg.className='form-msg show';
+    msg.textContent=ok?'Thanks! We will reply within one business day.':'Please enter your first name and a valid email address.';
+    if(ok)f.reset();
+  });
+})();
+</script>
+</body>
+</html>
