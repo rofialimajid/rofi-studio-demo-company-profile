@@ -5,14 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Your Company Name | Professional Cleaning Services</title>
 <meta name="description" content="Your Company Name provides reliable cleaning services for offices, businesses, and homes.">
+<meta property="og:title" content="Your Company Name | Professional Cleaning Services">
+<meta property="og:image" content="https://images.unsplash.com/photo-1758273705627-937374bfa978?w=1200&q=70&auto=format&fit=crop">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#F6F9F8; --surface:#FFFFFF; --ink:#0E2B2F; --muted:#51666A; --line:#DCE6E4;
   --brand:#0F766E; --brand-ink:#FFFFFF; --accent:#14B8A6; --soft:#E3F3F0; --deep:#0E2B2F; --deep-ink:#EAF6F4;
-  --r:18px; --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r:22px; --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){--bg:#0A1A1D;--surface:#102529;--ink:#EAF6F4;--muted:#9DB5B8;--line:#1D3A3F;--brand:#2DD4BF;--brand-ink:#06201F;--accent:#2DD4BF;--soft:#12332F;--deep:#071315;--deep-ink:#EAF6F4}
@@ -25,21 +28,28 @@ img,svg{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
-.wrap{width:min(1160px,100% - 2.5rem);margin-inline:auto}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
 section{padding:clamp(4rem,9vw,7rem) 0}
-h1,h2,h3{line-height:1.12;letter-spacing:-.02em}
-h1{font-size:clamp(2.6rem,6.4vw,4.8rem);font-weight:800}
+h1,h2,h3{line-height:1.08;letter-spacing:-.03em}
+h1{font-size:clamp(2.7rem,6.8vw,5.2rem);font-weight:800}
 h2{font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:800;margin-bottom:1rem}
-h3{font-size:1.15rem;font-weight:700;margin-bottom:.4rem}
+h3{font-size:1.15rem;font-weight:700;margin-bottom:.4rem;letter-spacing:-.01em}
 .lead{color:var(--muted);max-width:56ch;font-size:1.15rem}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.6rem;border-radius:999px;font-weight:700;font-size:1rem;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform .15s,background .2s}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);background:var(--soft);padding:.4rem .9rem;border-radius:999px;margin-bottom:1.2rem}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.6rem;border-radius:999px;font-weight:700;font-size:1rem;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform .15s,background .2s,box-shadow .2s}
 .btn-primary{background:var(--brand);color:var(--brand-ink)}
-.btn-primary:hover{transform:translateY(-2px)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px var(--brand)}
 .btn-ghost{border-color:var(--line);color:var(--ink)}
 .btn-ghost:hover{border-color:var(--brand)}
 
+/* Photo frames: gradient shows if an image ever fails to load */
+.ph{position:relative;overflow:hidden;border-radius:var(--r);background:linear-gradient(150deg,var(--deep),#134E4A)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.ph:hover img{transform:scale(1.04)}
+
 /* Nav */
-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
 .logo{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.15rem;letter-spacing:-.02em}
 .logo-mark{width:34px;height:34px;border-radius:10px;background:var(--brand);display:grid;place-items:center}
@@ -55,30 +65,36 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 8
 }
 
 /* Hero */
-.hero{padding-top:clamp(3rem,7vw,6rem)}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hero{padding-top:clamp(2.5rem,6vw,5rem)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
 .hero h1{margin-bottom:1.4rem}
+.hero h1 em{font-style:normal;color:var(--brand)}
 .hero .lead{margin-bottom:2rem}
-.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem}
-.hero-art{position:relative;aspect-ratio:1/1.05;border-radius:32px;background:linear-gradient(150deg,var(--deep),#134E4A);overflow:hidden}
-.hero-art svg{position:absolute;inset:0;width:100%;height:100%}
-.badge{position:absolute;left:1.2rem;bottom:1.2rem;right:1.2rem;background:color-mix(in srgb,var(--surface) 94%,transparent);color:var(--ink);border-radius:16px;padding:1rem 1.2rem;display:flex;gap:.9rem;align-items:center;font-size:.95rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:2rem}
+.rating{display:flex;align-items:center;gap:.7rem;color:var(--muted);font-size:.95rem;font-weight:500}
+.rating .stars{color:#F5B301;letter-spacing:2px}
+.hero-art{aspect-ratio:1/1.08;border-radius:36px}
+.badge{position:absolute;left:1.1rem;bottom:1.1rem;right:1.1rem;background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(14px);color:var(--ink);border:1px solid color-mix(in srgb,#fff 40%,transparent);border-radius:18px;padding:1rem 1.2rem;display:flex;gap:.9rem;align-items:center;font-size:.95rem}
 .badge b{display:block;font-size:1rem}
 .badge span{color:var(--muted)}
 .badge .tick{flex:none;width:40px;height:40px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--brand)}
-@media(max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-art{aspect-ratio:4/3}}
-@media(prefers-reduced-motion:no-preference){
-  .hero-grid>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-  .hero-grid>*:last-child{animation-delay:.15s}
-  @keyframes rise{from{opacity:0;transform:translateY(22px)}}
-}
+.chip{position:absolute;top:1.1rem;left:1.1rem;background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(14px);color:var(--ink);border-radius:999px;padding:.5rem 1rem;font-size:.85rem;font-weight:700;display:flex;align-items:center;gap:.5rem}
+.chip i{width:8px;height:8px;border-radius:50%;background:#22C55E;box-shadow:0 0 0 4px rgba(34,197,94,.25)}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-art{aspect-ratio:4/3.4}}
 
-/* Stats strip */
-.stats{padding:0}
+/* Trust marquee */
+.trust{padding:1.4rem 0;border-block:1px solid var(--line);overflow:hidden;background:var(--surface)}
+.track{display:flex;gap:3rem;width:max-content;font-weight:700;color:var(--muted);font-size:.95rem;white-space:nowrap}
+.track span{display:inline-flex;align-items:center;gap:.6rem}
+.track span::before{content:"✦";color:var(--accent)}
+@media(prefers-reduced-motion:no-preference){.track{animation:slide 32s linear infinite}@keyframes slide{to{transform:translateX(-50%)}}}
+
+/* Stats */
+.stats{padding-bottom:0}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
 .stat{padding:1.6rem 1.5rem;border-right:1px solid var(--line)}
 .stat:last-child{border-right:0}
-.stat strong{display:block;font-size:1.9rem;font-weight:800;letter-spacing:-.02em}
+.stat strong{display:block;font-size:2rem;font-weight:800;letter-spacing:-.03em}
 .stat span{color:var(--muted);font-size:.95rem}
 @media(max-width:820px){.stats-row{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 
@@ -88,6 +104,8 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 8
 .checks{display:grid;gap:.7rem;margin:1.6rem 0 2rem}
 .checks li{display:flex;gap:.7rem;align-items:flex-start}
 .checks svg{flex:none;width:22px;height:22px;margin-top:3px;color:var(--brand)}
+.stack{display:grid;gap:1.25rem}
+.stack .ph{aspect-ratio:16/10}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:2rem}
 .panel.tint{background:var(--soft);border-color:transparent}
 .points{display:grid;gap:1.4rem}
@@ -102,13 +120,22 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 8
 .services{background:var(--deep);color:var(--deep-ink)}
 .services .lead{color:color-mix(in srgb,var(--deep-ink) 70%,transparent)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
-.card{padding:2rem;border-radius:var(--r);background:color-mix(in srgb,var(--deep-ink) 6%,transparent);border:1px solid color-mix(in srgb,var(--deep-ink) 14%,transparent)}
+.card{padding:2rem;border-radius:var(--r);background:color-mix(in srgb,var(--deep-ink) 6%,transparent);border:1px solid color-mix(in srgb,var(--deep-ink) 14%,transparent);transition:transform .25s,background .25s}
+.card:hover{transform:translateY(-4px);background:color-mix(in srgb,var(--deep-ink) 10%,transparent)}
 .card .ico{background:var(--accent);color:#06201F;margin-bottom:1.2rem}
 .card p{color:color-mix(in srgb,var(--deep-ink) 70%,transparent);font-size:.98rem}
 @media(max-width:820px){.cards{grid-template-columns:1fr}}
 
+/* Bento gallery */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:1rem;margin-top:3rem}
+.bento .ph{height:100%}
+.bento .b1{grid-column:span 2;grid-row:span 2}
+.bento .b4{grid-column:span 2}
+.cap{position:absolute;left:.9rem;bottom:.9rem;background:color-mix(in srgb,var(--surface) 82%,transparent);backdrop-filter:blur(10px);color:var(--ink);font-size:.82rem;font-weight:700;padding:.35rem .8rem;border-radius:999px}
+@media(max-width:820px){.bento{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.bento .b1{grid-column:span 2}.bento .b4{grid-column:span 2}}
+
 /* Process */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem;counter-reset:s}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem;counter-reset:s;list-style:none}
 .step{position:relative;padding-top:1.6rem;border-top:2px solid var(--line)}
 .step::before{counter-increment:s;content:counter(s);position:absolute;top:-17px;left:0;width:32px;height:32px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font-weight:800;display:grid;place-items:center;font-size:.9rem}
 .step p{color:var(--muted);font-size:.96rem}
@@ -144,6 +171,17 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
 .foot .logo{color:var(--ink)}
 .foot nav{display:flex;gap:1.4rem}
 .foot a:hover{color:var(--brand)}
+.credits{flex-basis:100%;font-size:.82rem;opacity:.85}
+.credits a{text-decoration:underline}
+
+/* Scroll reveal (only when JS runs and motion is allowed) */
+@media(prefers-reduced-motion:no-preference){
+  .js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .js .rv.in{opacity:1;transform:none}
+  .hero-grid>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero-grid>*:last-child{animation-delay:.15s}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}}
+}
 </style>
 </head>
 <body>
@@ -160,6 +198,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
     <nav class="menu" id="menu" aria-label="Main">
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#work">Our work</a>
       <a href="#process">Process</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact" class="btn btn-primary">Get a quote</a>
@@ -172,23 +211,18 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <h1>We clean. You relax.</h1>
+      <span class="eyebrow">Offices · Businesses · Homes</span>
+      <h1>We clean. <em>You relax.</em></h1>
       <p class="lead">Your Company Name keeps offices, businesses, and homes spotless with trained teams, clear pricing, and schedules we actually keep.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn btn-primary">Book a free quote</a>
         <a href="#services" class="btn btn-ghost">See our services</a>
       </div>
+      <div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span>Rated 4.9 by 500+ happy clients</span></div>
     </div>
-    <div class="hero-art" role="img" aria-label="Abstract illustration of sparkling clean surfaces">
-      <svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <circle cx="300" cy="110" r="150" fill="#14B8A6" opacity=".22"/>
-        <circle cx="90" cy="300" r="170" fill="#2DD4BF" opacity=".14"/>
-        <rect x="70" y="90" width="190" height="230" rx="22" fill="#fff" opacity=".1"/>
-        <rect x="100" y="125" width="130" height="14" rx="7" fill="#fff" opacity=".35"/>
-        <rect x="100" y="155" width="90" height="14" rx="7" fill="#fff" opacity=".2"/>
-        <rect x="100" y="185" width="110" height="14" rx="7" fill="#fff" opacity=".2"/>
-        <g fill="#5EEAD4"><path d="M290 70l7 21 21 7-21 7-7 21-7-21-21-7 21-7z"/><path d="M335 200l4 12 12 4-12 4-4 12-4-12-12-4 12-4z" opacity=".8"/><path d="M60 70l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" opacity=".7"/></g>
-      </svg>
+    <div class="ph hero-art">
+      <img src="https://images.unsplash.com/photo-1758273705627-937374bfa978?w=1400&q=72&auto=format&fit=crop" alt="Cleaner happily vacuuming a bright, modern living room" width="1400" height="1500" fetchpriority="high">
+      <span class="chip"><i></i>Booking this week</span>
       <div class="badge">
         <span class="tick"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>
         <div><b>Satisfaction guaranteed</b><span>Not happy? We re-clean it for free.</span></div>
@@ -197,8 +231,15 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
   </div>
 </section>
 
+<div class="trust" aria-label="Our promises">
+  <div class="track">
+    <span>Insured &amp; vetted staff</span><span>Eco-friendly products</span><span>Fixed, upfront pricing</span><span>Same team every visit</span><span>Free re-clean guarantee</span><span>Flexible schedules</span>
+    <span>Insured &amp; vetted staff</span><span>Eco-friendly products</span><span>Fixed, upfront pricing</span><span>Same team every visit</span><span>Free re-clean guarantee</span><span>Flexible schedules</span>
+  </div>
+</div>
+
 <section class="stats" aria-label="Company highlights">
-  <div class="wrap">
+  <div class="wrap rv">
     <div class="stats-row">
       <div class="stat"><strong>10+</strong><span>Years of experience</span></div>
       <div class="stat"><strong>500+</strong><span>Happy clients</span></div>
@@ -210,7 +251,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
 
 <section id="about">
   <div class="wrap split">
-    <div>
+    <div class="rv">
       <h2>Cleaning for companies</h2>
       <p class="lead">From a single office to a full facility, we build a plan around your space and your hours.</p>
       <ul class="checks">
@@ -221,18 +262,21 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
       </ul>
       <a href="#contact" class="btn btn-primary">Request a business quote</a>
     </div>
-    <div class="panel points">
-      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h9"/></svg></span><div><h3>Transparent process</h3><p>Checklists and reports for every visit, so you always know what was done.</p></div></div>
-      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5z"/></svg></span><div><h3>Repairs organized</h3><p>We spot issues and coordinate trusted technicians on your behalf.</p></div></div>
-      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></span><div><h3>Reliable partner</h3><p>Insured, vetted staff and one contact person for your account.</p></div></div>
-      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span><div><h3>Call service</h3><p>Urgent mess? Call us and we send a team fast.</p></div></div>
+    <div class="stack rv">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1580256081112-e49377338b7f?w=1200&q=72&auto=format&fit=crop" alt="Housekeeping cart and vacuum in a long hotel corridor" loading="lazy" width="1200" height="750"></div>
+      <div class="panel points">
+        <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h9"/></svg></span><div><h3>Transparent process</h3><p>Checklists and reports for every visit, so you always know what was done.</p></div></div>
+        <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5z"/></svg></span><div><h3>Repairs organized</h3><p>We spot issues and coordinate trusted technicians on your behalf.</p></div></div>
+        <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></span><div><h3>Reliable partner</h3><p>Insured, vetted staff and one contact person for your account.</p></div></div>
+        <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span><div><h3>Call service</h3><p>Urgent mess? Call us and we send a team fast.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section style="padding-top:0">
   <div class="wrap split flip">
-    <div>
+    <div class="rv">
       <h2>Care for private properties</h2>
       <p class="lead">Your home deserves the same attention you give it. One trusted team, the same faces every visit.</p>
       <ul class="checks">
@@ -243,20 +287,25 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
       </ul>
       <a href="#contact" class="btn btn-primary">Request a home quote</a>
     </div>
-    <div class="panel tint points">
-      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></span><div><h3>No moonlighting</h3><p>Our cleaners work only for us, so quality and trust stay consistent.</p></div></div>
-      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><h3>Personal</h3><p>A dedicated cleaner who learns how you like things done.</p></div></div>
-      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>On time</h3><p>We arrive in the agreed window and finish what we promised.</p></div></div>
-      <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5C16 5 14.2 4.5 12 4.5c-2.8 0-4.5 1.2-4.5 3.2 0 4.8 9 2.3 9 7 0 2-1.8 3.3-4.5 3.3-2.3 0-4.3-.8-5.2-2.5"/></svg></span><div><h3>Fair price</h3><p>Upfront quotes with no hidden fees.</p></div></div>
+    <div class="stack rv">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1758273705723-26ef454252ce?w=1200&q=72&auto=format&fit=crop" alt="Cleaner in yellow gloves wiping a table" loading="lazy" width="1200" height="750"></div>
+      <div class="panel tint points">
+        <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></span><div><h3>No moonlighting</h3><p>Our cleaners work only for us, so quality and trust stay consistent.</p></div></div>
+        <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><h3>Personal</h3><p>A dedicated cleaner who learns how you like things done.</p></div></div>
+        <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>On time</h3><p>We arrive in the agreed window and finish what we promised.</p></div></div>
+        <div class="point"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5C16 5 14.2 4.5 12 4.5c-2.8 0-4.5 1.2-4.5 3.2 0 4.8 9 2.3 9 7 0 2-1.8 3.3-4.5 3.3-2.3 0-4.3-.8-5.2-2.5"/></svg></span><div><h3>Fair price</h3><p>Upfront quotes with no hidden fees.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="services" id="services">
   <div class="wrap">
-    <h2>Everything your space needs</h2>
-    <p class="lead">Add on whatever you need. Each service can be booked once or on a recurring schedule.</p>
-    <div class="cards">
+    <div class="rv">
+      <h2>Everything your space needs</h2>
+      <p class="lead">Add on whatever you need. Each service can be booked once or on a recurring schedule.</p>
+    </div>
+    <div class="cards rv">
       <article class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></span><h3>Property maintenance</h3><p>Regular upkeep of building interiors, common areas, and entrances.</p></article>
       <article class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5z"/></svg></span><h3>Repair coordination</h3><p>One call to schedule and supervise plumbers, electricians, and painters.</p></article>
       <article class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V10M12 10c0-4 3-7 8-7 0 5-3 8-8 7zM12 14c0-3-2-5-6-5 0 4 2 6 6 5z"/></svg></span><h3>Garden care</h3><p>Lawn, hedges, and outdoor areas kept tidy through every season.</p></article>
@@ -264,11 +313,28 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
   </div>
 </section>
 
-<section id="process">
+<section id="work">
   <div class="wrap">
-    <h2>How it works</h2>
-    <p class="lead">From first call to first clean, usually within a few days.</p>
-    <ol class="steps" style="list-style:none">
+    <div class="rv">
+      <h2>A closer look at our work</h2>
+      <p class="lead">Detail-focused teams, the right equipment, and results you can see.</p>
+    </div>
+    <div class="bento rv">
+      <div class="ph b1"><img src="https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?w=1200&q=72&auto=format&fit=crop" alt="Woman mopping a bright, modern living room floor" loading="lazy" width="1200" height="1200"><span class="cap">Floor care</span></div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1758272421995-e993f97fae22?w=800&q=72&auto=format&fit=crop" alt="Cleaner in yellow gloves wiping a shelf" loading="lazy" width="800" height="800"><span class="cap">Surfaces</span></div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1646980241033-cd7abda2ee88?w=800&q=72&auto=format&fit=crop" alt="Cleaner carrying a caddy and broom up tiled stairs" loading="lazy" width="800" height="800"><span class="cap">Stairs &amp; halls</span></div>
+      <div class="ph b4"><img src="https://images.unsplash.com/photo-1742483359033-13315b247c74?w=1200&q=72&auto=format&fit=crop" alt="Technician in a protective suit cleaning a carpet" loading="lazy" width="1200" height="600"><span class="cap">Deep carpet cleaning</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <h2>How it works</h2>
+      <p class="lead">From first call to first clean, usually within a few days.</p>
+    </div>
+    <ol class="steps rv">
       <li class="step"><h3>Tell us what you need</h3><p>Send a message or call. We ask a few questions about size and schedule.</p></li>
       <li class="step"><h3>Get a clear quote</h3><p>A fixed price in writing, usually within one business day.</p></li>
       <li class="step"><h3>We clean</h3><p>A vetted team arrives on time with all equipment and supplies.</p></li>
@@ -279,8 +345,8 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
 
 <section id="reviews" style="padding-top:0">
   <div class="wrap">
-    <h2>What clients say</h2>
-    <div class="quotes">
+    <h2 class="rv">What clients say</h2>
+    <div class="quotes rv">
       <figure class="quote"><p>“Replace this with a real testimonial from a client. Short, specific quotes about results work best.”</p><figcaption class="who"><span class="avatar">A</span><div><b>Client Name</b><span>Role, Company</span></div></figcaption></figure>
       <figure class="quote"><p>“Replace this with another testimonial. Mention what changed after working with Your Company Name.”</p><figcaption class="who"><span class="avatar">B</span><div><b>Client Name</b><span>Role, Company</span></div></figcaption></figure>
     </div>
@@ -289,7 +355,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
 
 <section id="contact" style="background:var(--soft)">
   <div class="wrap contact-grid">
-    <div>
+    <div class="rv">
       <h2>Let's talk</h2>
       <p class="lead">Tell us about your space and we'll reply with a quote within one business day.</p>
       <div class="info">
@@ -298,7 +364,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
         <a href="mailto:hello@yourcompany.com"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>hello@yourcompany.com</a>
       </div>
     </div>
-    <div class="panel">
+    <div class="panel rv">
       <form id="contact-form" novalidate>
         <div class="row">
           <label>First name<input type="text" name="first" autocomplete="given-name" required></label>
@@ -320,15 +386,18 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
     <a href="#top" class="logo">Your Company Name</a>
     <nav aria-label="Footer"><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
     <span>© <span id="yr">2026</span> Your Company Name. All rights reserved.</span>
+    <p class="credits">Photos via <a href="https://unsplash.com/@silverkblack" target="_blank" rel="noopener">Vitaly Gariev</a>, <a href="https://unsplash.com/@glistenacademy" target="_blank" rel="noopener">Katie Pearse</a>, <a href="https://unsplash.com/@josuemichelphotography" target="_blank" rel="noopener">Josue Michel</a> and <a href="https://unsplash.com/@calsteamanddrycarpet" target="_blank" rel="noopener">California Steam &amp; Dry Carpet Cleaning</a> on <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>.</p>
   </div>
 </footer>
 
 <script>
 (function(){
+  var d=document.documentElement;
   var b=document.querySelector('.burger'),m=document.getElementById('menu');
   b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});
   m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false')}});
   document.getElementById('yr').textContent=new Date().getFullYear();
+
   var f=document.getElementById('contact-form'),msg=document.getElementById('form-msg');
   f.addEventListener('submit',function(e){
     e.preventDefault();
@@ -337,6 +406,17 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
     msg.textContent=ok?'Thanks! We will reply within one business day.':'Please enter your first name and a valid email address.';
     if(ok)f.reset();
   });
+
+  // Hide any photo that fails to load; the gradient frame behind it takes over
+  document.querySelectorAll('.ph img').forEach(function(i){i.addEventListener('error',function(){i.style.display='none'})});
+
+  // Scroll reveal
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    d.classList.add('js');
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }
 })();
 </script>
 </body>
